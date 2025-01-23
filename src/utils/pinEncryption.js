@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 
 const algorithm = 'aes-256-cbc'; // Encryption algorithm
-const secretKey = crypto.createHash('sha256').update('your-secret-key').digest('hex').slice(0, 32); // Esto generará una clave de 32 bytes
+const secretKey = crypto.createHash('sha256').update('aXdeRtjakdlal').digest('hex').slice(0, 32); // Esto generará una clave de 32 bytes
 const iv = crypto.randomBytes(16); // Initialization vector
 
 // Function to encrypt the PIN
