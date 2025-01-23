@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const { encryptPin } = require('../utils/pinEncryption');
 
-// Cargar los datos de las cuentas
+// Load account data
 const accounts = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/accounts.json'), 'utf-8'));
 
-// Obtener movimientos por número de tarjeta
+// Get movements by card number
 const changePIN = (cardNumber, newPIN) => {
   const account = accounts.find(acc => acc.cardNumber === cardNumber);
   if (!account) return null;
@@ -17,4 +17,4 @@ const changePIN = (cardNumber, newPIN) => {
   return `The PIN for ${cardNumber} has been changed successfully!`
 };
 
-module.exports = { changePIN };
+module.e
