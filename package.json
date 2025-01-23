@@ -1,0 +1,23 @@
+{
+  "name": "api-bank",
+  "version": "1.0.0",
+  "description": "Se trata de una API que va a permitir a los clientes realizar diversas operaciones financieras",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/LuisAdelantadoRomero/api-bank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisAdelantadoRomero/api-bank/issues"
+  },
+  "homepage": "https://github.com/LuisAdelantadoRomero/api-bank#readme"
+}
