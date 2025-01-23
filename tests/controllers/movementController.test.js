@@ -31,7 +31,7 @@ describe('GET /api/movements/:cardNumber', () => {
     movementService.getMovementsByCardNumber.mockResolvedValue(mockedMovements);
 
     // GET Request
-    const response = await request(app).get(`/api/movements/${cardNumber}`);
+    const response = await request(app).get(`/movements/${cardNumber}`);
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual(mockedMovements);

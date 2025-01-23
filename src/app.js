@@ -4,7 +4,7 @@ const routes = require('./routes/routes');
 
 app.use(express.json());  // Para poder procesar JSON en los cuerpos de las peticiones
 
-app.use('/api', routes);
+app.use('/', routes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
