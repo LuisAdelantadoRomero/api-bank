@@ -1,7 +1,7 @@
 const movementService = require('../services/movementService'); // Asegúrate de tener el servicio para manejar los movimientos
 const accountService = require('../services/accountService'); // Asegúrate de tener el servicio para manejar las cuentas
 
-// Controlador para realizar la transferencia
+// Controller for the transfer
 async function transferMoney(req, res) {
   const { fromAccount, toAccount, amount } = req.body; // Obtén las cuentas y el monto desde el cuerpo de la solicitud
 
@@ -10,30 +10,30 @@ async function transferMoney(req, res) {
   }
 
   try {
-    // Verificar si las cuentas existen
+    // Verify if the accounts exists
     const fromAccountData = await accountService.getAccountById(fromAccount);
     const toAccountData = await accountService.getAccountById(toAccount);
 
     if (!fromAccountData || !toAccountData) {
-      return res.status(404).json({ message: 'One or both accounts not found' });
+      return res.status(404).json({ message: 'Una o varias cuentas no han sido encontradas' });
     }
 
-    // Verificar si la cuenta de origen tiene suficiente saldo
+    // We should verify if the account has enough money
     if (fromAccountData.balance < amount) {
-      return res.status(400).json({ message: 'Insufficient balance' });
+      return res.status(400).json({ message: 'Balance insuficiente' });
     }
 
-    // Realizar la transferencia: descontar del saldo de la cuenta de origen
+    // Transfer
     fromAccountData.balance -= amount;
     toAccountData.balance += amount;
 
-    // Guardar los cambios en las cuentas
+    // Updating account
     await accountService.updateAccount(fromAccount, fromAccountData);
     await accountService.updateAccount(toAccount, toAccountData);
 
-    // Registrar el movimiento de la transferencia (puedes guardar en una base de datos de movimientos)
-    await movementService.createMovement(fromAccount, 'withdrawal', amount, 'Transfer to account ' + toAccount);
-    await movementService.createMovement(toAccount, 'deposit', amount, 'Transfer from account ' + fromAccount);
+    // Store the movement itself
+    await movementService.createMovement(fromAccount, 'withdrawal', amount, 'Transferido a la cuenta ' + toAccount);
+    await movementService.createMovement(toAccount, 'deposit', amount, 'Transferido de la cuenta ' + fromAccount);
 
     return res.status(200).json({ message: 'Transfer successful' });
   } catch (error) {
