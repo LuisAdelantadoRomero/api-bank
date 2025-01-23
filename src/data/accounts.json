@@ -1,0 +1,67 @@
+[
+    {
+      "cardNumber": "1234-5678-9876-5432",
+      "pin": "1234",
+      "accounts": [
+        {
+          "type": "savings",
+          "balance": 1500,
+          "transactions": [
+            {
+              "date": "2025-01-01",
+              "type": "deposit",
+              "amount": 1000,
+              "description": "Initial deposit"
+            },
+            {
+              "date": "2025-01-15",
+              "type": "withdrawal",
+              "amount": 200,
+              "description": "Cash withdrawal"
+            }
+          ]
+        },
+        {
+          "type": "checking",
+          "balance": 5000,
+          "transactions": [
+            {
+              "date": "2025-01-02",
+              "type": "deposit",
+              "amount": 2000,
+              "description": "Salary deposit"
+            }
+          ]
+        }
+      ],
+      "settings": {
+        "withdrawalLimit": 1000,
+        "emailAlerts": true,
+        "smsAlerts": false
+      }
+    },
+    {
+      "cardNumber": "2345-6789-8765-4321",
+      "pin": "5678",
+      "accounts": [
+        {
+          "type": "savings",
+          "balance": 3000,
+          "transactions": [
+            {
+              "date": "2025-01-10",
+              "type": "withdrawal",
+              "amount": 300,
+              "description": "Supermarket purchase"
+            }
+          ]
+        }
+      ],
+      "settings": {
+        "withdrawalLimit": 500,
+        "emailAlerts": false,
+        "smsAlerts": true
+      }
+    }
+  ]
+  
