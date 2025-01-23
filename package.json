@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/LuisAdelantadoRomero/api-bank#readme",
   "dependencies": {
+    "crypto": "^1.0.1",
     "express": "^4.21.2",
     "nodemon": "^3.1.9"
   },

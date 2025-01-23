@@ -1,6 +1,7 @@
 // services/movementService.js
 const fs = require('fs');
 const path = require('path');
+const { encryptPin } = require('../utils/pinEncryption');
 
 // Cargar los datos de las cuentas
 const accounts = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/accounts.json'), 'utf-8'));
@@ -11,6 +12,7 @@ const changePIN = (cardNumber, newPIN) => {
   if (!account) return null;
 
   // TODO Here we can modify the PIN
+  const encryptedPin = encryptPin(newPIN);
 
   return `The PIN for ${cardNumber} has been changed successfully!`
 };

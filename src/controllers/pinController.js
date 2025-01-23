@@ -6,7 +6,7 @@ const changePIN = (req, res) => {
     if (!pin) {
         return res.status(404).json({ error: 'Cuenta no encontrada' });
     }
-    res.json(deposit);
+    res.json(pin);
 };
 
 module.exports = { changePIN };

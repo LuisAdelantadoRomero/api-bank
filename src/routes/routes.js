@@ -17,7 +17,7 @@ router.post('/retrieve/:numberCard/:ammount', retreivalController.retrievalMoney
 router.post('/deposit/:numberCard/:ammount', depositController.depositMoney);
 
 // Change PIN
-router.put('/changePIN/:numberCard', pinController.changePIN);
+router.put('/changePIN/:numberCard/:newPIN', pinController.changePIN);
 /*
 // Check or modify the configuration of th card
 router.get('/configuration/:numberCard', configurationController.getConfiguration);
